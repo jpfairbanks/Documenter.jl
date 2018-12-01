@@ -8,6 +8,7 @@ julia:
   - 0.7
   - 1.0
   - nightly
+services: docker
 
 notifications:
   email: false
@@ -23,5 +24,5 @@ jobs:
       os: linux
       script:
         - julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
-        - julia --project=docs/ docs/make.jl
+        - julia --project=docs/ --color=yes docs/make.jl --verbose
       after_success: skip

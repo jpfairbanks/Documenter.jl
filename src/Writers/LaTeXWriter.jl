@@ -95,7 +95,7 @@ end
 const DOCKER_IMAGE_TAG = "0.1"
 
 function compile_tex(texfile)
-    engine = get(ENV, "DOCUMENTER_LATEX_ENGINE", "latexmk") # TODO: make this configurable from makedocs
+    engine = get(ENV, "DOCUMENTER_LATEX_ENGINE", "docker") # TODO: make this configurable from makedocs
     if engine == "latexmk"
         Sys.which("latexmk") === nothing && (@error "LaTeXWriter: latexmk command not found."; return false)
         @info "LaTeXWriter: using latexmk to compile tex."

@@ -1,7 +1,8 @@
-using Documenter, DocumenterTools
+using Documenter, DocumenterTools, DocumenterLaTeX
 
 makedocs(
     modules = [Documenter, DocumenterTools],
+    format = :latex,
     clean = false,
     assets = ["assets/favicon.ico"],
     sitename = "Documenter.jl",
